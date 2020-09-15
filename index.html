@@ -10,6 +10,10 @@
 
 <body>
     <h1>Torre de Hanoi</h1>
+    
+    <div id="resultado"></div>
+    <div id="modoJogador"></div>
+    <div id="disco"></div>
 
     <div id="conteiner">
         <div id="torre1" class="torres"></div>
@@ -18,20 +22,24 @@
     </div>
 
     <div id="statsContainer">
-        <div id="jogadas">Número de Jogadas: <span id="jogadasNum"></span></div>
-
-        <div id="timer">
-            <label id="minutes">00</label>:<label id="seconds">00</label>
+        <div class='hugging'>
+            <div id="jogadas">Número de Jogadas</div>
+            <span id="jogadasNum"></span>
+        </div>
+        <div class='hugging'>
+            <div id="timer">Tempo</div>
+           <span> <label id="minutes">00</label>:<label id="seconds">00</label></span>
         </div>
     </div>
 
-    <div>
-        <button id="btStart" onclick=timer();>Iniciar</button>
+    <div id="botoes">
+        <button id="btStart">Iniciar</button>
         <button id="btRestart">Reiniciar</button>
     </div>
 
-	</div>
+    </div>
 
     <script src="torre-de-hanoi.js"></script>
 </body>
+
 </html>
