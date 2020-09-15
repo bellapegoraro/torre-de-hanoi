@@ -9,11 +9,29 @@
 </head>
 
 <body>
+    <h1>Torre de Hanoi</h1>
+
     <div id="conteiner">
         <div id="torre1" class="torres"></div>
         <div id="torre2" class="torres"></div>
         <div id="torre3" class="torres"></div>
     </div>
+
+    <div id="statsContainer">
+        <div id="jogadas">Número de Jogadas: <span id="jogadasNum"></span></div>
+
+        <div id="timer">
+            <label id="minutes">00</label>:<label id="seconds">00</label>
+        </div>
+    </div>
+
+    <div>
+        <button id="btStart" onclick=timer();>Iniciar</button>
+        <button id="btRestart">Reiniciar</button>
+    </div>
+
+	</div>
+
     <script src="torre-de-hanoi.js"></script>
 </body>
 </html>
