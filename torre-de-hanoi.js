@@ -2,14 +2,8 @@ let torre1Arr = ["top", "middle", "bottom"];
 let torre2Arr = [];
 let torre3Arr = [];
 let aux = [];
-let counter = 1;
-let ganhou = false;
-let perdeu = false;
-
-let modoJogador = document.getElementById('modoJogador')
-modoJogador.innerText = 'Clique no botão "iniciar" para começar a jogar'
-modoJogador.style = "padding-bottom: 20px"
-
+let counter = 0;
+document.getElementById("jogadasNum").textContent = counter++;
 
 function timer() {
 
@@ -34,9 +28,6 @@ function timer() {
     }
   }
 }
-
-document.getElementById('btStart').addEventListener('click', inicialize)
-
 
 function createInitialTower() {
 
@@ -75,13 +66,15 @@ function createInitialTower() {
   let counterSpan = document.createElement("span");
   divCounter.appendChild(counterSpan);
 
+  let modoJogador = document.getElementById('modoJogador');
+  modoJogador.innerText = 'Clique no botão "iniciar" para começar a jogar';
+  modoJogador.style = "padding-bottom: 20px";
+
+  let restartDis = document.getElementById("btRestart");
+  restartDis.setAttribute("disabled", "true");
+  restartDis.classList.add('disabled');
 }
 createInitialTower();
-
-let restartDis = document.getElementById("btRestart");
-restartDis.setAttribute("disabled", "true");
-restartDis.classList.add('disabled')
-
 
 function inicialize() {
 
@@ -93,6 +86,7 @@ function inicialize() {
   disable.setAttribute("disabled", "true");
   disable.classList.add('disabled')
 
+  let restartDis = document.getElementById("btRestart");
   restartDis.removeAttribute("disabled")
   restartDis.classList.remove('disabled')
 
@@ -121,7 +115,6 @@ function inicialize() {
 
   function putDisc(arr, clickedTower) {
 
-
     document.getElementById("jogadasNum").textContent = counter++;
 
     arr.unshift(aux[0]);
@@ -141,9 +134,6 @@ function inicialize() {
     // condição de derrota
     if (width0 > width1) {
       modoJogador.innerText = ""
-      // let result = document.getElementById('resultado')
-      // result.innerText = "Game Over!"
-      // result.style = "color: darkred"
       let modalLoser = document.getElementById("modalLoser");
       modalLoser.classList.remove("oculta2");
       let conteinerDiv = document.getElementById("conteiner");
@@ -153,9 +143,6 @@ function inicialize() {
     // condição de vitória
     if (clickedTower === "torre3" && arr.length === 3) {
       modoJogador.innerText = ""
-      // let result = document.getElementById('resultado')
-      // result.innerText = "Parabéns!"
-      // result.style = "color: darkgreen";
       let modalWinner = document.getElementById("modalWinner");
       modalWinner.classList.remove("oculta");
       let conteinerDiv = document.getElementById("conteiner");
@@ -163,7 +150,7 @@ function inicialize() {
     }
   }
 
-  let tower1_function = document.getElementById("torre1").onclick = function () {
+  document.getElementById("torre1").onclick = function () {
 
     if (aux.length !== 0 || torre1Arr.length !== 0) {
       moveDisc(aux, torre1Arr, "torre1");
@@ -171,7 +158,7 @@ function inicialize() {
 
   }
 
-  let tower2_function = document.getElementById("torre2").onclick = function () {
+  document.getElementById("torre2").onclick = function () {
 
     if (aux.length !== 0 || torre2Arr.length !== 0) {
       moveDisc(aux, torre2Arr, "torre2");
@@ -179,7 +166,7 @@ function inicialize() {
 
   }
 
-  let tower3_function = document.getElementById("torre3").onclick = function () {
+  document.getElementById("torre3").onclick = function () {
 
     if (aux.length !== 0 || torre3Arr.length !== 0) {
       moveDisc(aux, torre3Arr, "torre3");
@@ -188,12 +175,15 @@ function inicialize() {
   }
 
 }
+document.getElementById('btStart').addEventListener('click', inicialize)
 
 function restart() {
   location.reload();
 }
-
 document.getElementById("btRestart").addEventListener("click", restart);
+document.getElementById("btJogarNovamente").addEventListener("click", restart);
+document.getElementById("btJogarNovamente2").addEventListener("click", restart);
+
 
 
 

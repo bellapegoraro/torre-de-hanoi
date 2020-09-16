@@ -23,7 +23,6 @@ h1 {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, serif;
 }
 
-
 #conteiner{
     display: flex;
     justify-content: space-around;
@@ -35,7 +34,6 @@ h1 {
 }
 
 .torres{
-    /* background-color: lightpink; */
     width: 100px;
     height: 150px;
     display: flex; 
@@ -138,43 +136,6 @@ button {
     justify-content: center;
 }
 
-@media(min-width: 400px){
-    body{
-        width: 100%;
-        height: 100%;
-    }
-
-    #conteiner{
-        display: flex;
-        justify-content: space-evenly;
-        width: 70%;
-        margin: 0 auto; 
-    }
-
-    .torres{
-        width: 150px;
-    }
-
-    #statsContainer{
-     margin-left: 180px;
-    }
-
-    #botoes{
-        margin-top: 20px;
-        display: flex;
-        justify-content: center;
-    }
-
-    #btStart{
-        margin-right: 30px;;
-    }
-
-    #gifLoser {
-        width: 200px;
-        height: 100px;
-    }
-}
-
 /*--------------- MODAL WINNER --------------- */
 
 #modalWinner {
@@ -194,18 +155,15 @@ button {
     align-items: center;
 }
 
-#gifWinner {
-    width: 300px;
-    height: 300px;
-    background-image: url('./assets/hanoiWinnerBaby.gif');
-    background-position: center;
-}
-
 #congrats {
     color: white;
     text-align: center;
     font-size: 2rem;
     padding-bottom: 20px;
+}
+
+#congrats h3 {
+    color: rgb(99, 187, 99);
 }
 
 #btJogarNovamente{
@@ -241,18 +199,15 @@ button {
     align-items: center;
 }
 
-#gifLoser {
-    width: 300px;
-    height: 300px;
-    background-image: url('./assets/hanoiLoser.gif');
-    background-position: center;
-}
-
 #sorries {
     color: white;
     text-align: center;
     font-size: 2rem;
     padding-bottom: 20px;
+}
+
+#sorries h3 {
+    color: rgb(227, 114, 114);
 }
 
 #btJogarNovamente2{
@@ -268,3 +223,54 @@ button {
 .oculta2 {
     visibility: hidden;
 } 
+
+/*------------------- Responsivo ---------------------*/
+
+@media(min-width: 400px){
+    body{
+        width: 100%;
+        height: 100%;
+    }
+
+    #conteiner{
+        display: flex;
+        justify-content: space-evenly;
+        width: 70%;
+        margin: 0 auto; 
+    }
+
+    .torres{
+        width: 150px;
+    }
+
+    #statsContainer{
+     margin-left: 180px;
+    }
+
+    #botoes{
+        margin-top: 20px;
+        display: flex;
+        justify-content: center;
+    }
+
+    #btStart{
+        margin-right: 30px;;
+    }
+
+}
+
+@media (min-width: 818px){
+    #gifWinner {
+        width: 300px;
+        height: 300px;
+        background-image: url('./assets/hanoiWinnerBaby.gif');
+        background-position: center;
+    }
+
+    #gifLoser {
+        width: 300px;
+        height: 300px;
+        background-image: url('./assets/hanoiLoser.gif');
+        background-position: center;
+    }
+}
