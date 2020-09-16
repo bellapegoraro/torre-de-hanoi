@@ -31,7 +31,7 @@ h1 {
     height: 200px;
     margin-bottom: 20px; 
     cursor: pointer;
-    /* -webkit-tap-highlight-color: transparent */
+    -webkit-tap-highlight-color: transparent
     
 }
 
