@@ -9,33 +9,66 @@
 </head>
 
 <body>
-    <h1>Torre de Hanoi</h1>
-    
-    <div id="resultado"></div>
-    <div id="modoJogador"></div>
-    <div id="disco"></div>
 
-    <div id="conteiner">
-        <div id="torre1" class="torres"></div>
-        <div id="torre2" class="torres"></div>
-        <div id="torre3" class="torres"></div>
-    </div>
+    <div id="body">
 
-    <div id="statsContainer">
-        <div class='hugging'>
-            <div id="jogadas">Número de Jogadas</div>
-            <span id="jogadasNum"></span>
+        <h1>Torre de Hanoi</h1>
+        
+        <div id="resultado"></div>
+        <div id="modoJogador"></div>
+        <div id="disco"></div>
+
+        <div id="conteiner">
+            <div id="torre1" class="torres"></div>
+            <div id="torre2" class="torres"></div>
+            <div id="torre3" class="torres"></div>
         </div>
-        <div class='hugging'>
-            <div id="timer">Tempo</div>
-           <span> <label id="minutes">00</label>:<label id="seconds">00</label></span>
-        </div>
-    </div>
 
-    <div id="botoes">
-        <button id="btStart">Iniciar</button>
-        <button id="btRestart">Reiniciar</button>
-    </div>
+        <div id="statsContainer">
+            <div class='hugging'>
+                <div id="jogadas">Número de Jogadas</div>
+                <span id="jogadasNum"></span>
+            </div>
+            <div class='hugging'>
+                <div id="timer">Tempo</div>
+            <span> <label id="minutes">00</label>:<label id="seconds">00</label></span>
+            </div>
+        </div>
+
+        <div id="botoes">
+            <button id="btStart">Iniciar</button>
+            <button id="btRestart">Reiniciar</button>
+        </div>
+
+        
+
+            <div id="modalWinner" class="oculta">
+                <div>
+                    <div id="congrats">
+                        <h3>Parabéns, você conseguiu!</h3>
+                    </div>
+                    <div id="modalOverlay">
+                        <div id="gifWinner"></div>
+                        <div id="jogarNovamente">
+                            <button id="btJogarNovamente" onclick= restart()>JOGAR NOVAMENTE</button>
+                        </div>  
+                    </div>
+                </div>
+            </div>
+
+            <div id="modalLoser" class="oculta2">
+                <div>
+                    <div id="sorries">
+                        <h3>Ah! Você perdeu... tente novamente</h3>
+                    </div>
+                    <div id="modalOverlay2">
+                        <div id="gifLoser"></div>
+                        <div id="jogarNovamente">
+                            <button id="btJogarNovamente2" onclick= restart()>JOGAR NOVAMENTE</button>
+                        </div>  
+                    </div>
+                </div>
+            </div> 
 
     </div>
 

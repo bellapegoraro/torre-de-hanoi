@@ -3,17 +3,21 @@ let torre2Arr = [];
 let torre3Arr = [];
 let aux = [];
 let counter = 1;
-let minutesLabel = document.getElementById("minutes");
-let secondsLabel = document.getElementById("seconds");
-let totalSeconds = 0;
+let ganhou = false;
+let perdeu = false;
+
+let modoJogador = document.getElementById('modoJogador')
+modoJogador.innerText = 'Clique no botão "iniciar" para começar a jogar'
+modoJogador.style = "padding-bottom: 20px"
+
 
 function timer() {
 
-  let intervalo = setInterval(setTime, 1000);
+  let minutesLabel = document.getElementById("minutes");
+  let secondsLabel = document.getElementById("seconds");
+  let totalSeconds = 0;
 
-  function stop(){
-    clearInterval(intervalo)
-  }
+  setInterval(setTime, 1000);
 
   function setTime() {
     ++totalSeconds;
@@ -29,7 +33,6 @@ function timer() {
       return valString;
     }
   }
-
 }
 
 document.getElementById('btStart').addEventListener('click', inicialize)
@@ -83,7 +86,7 @@ restartDis.classList.add('disabled')
 function inicialize() {
 
   let modoJogador = document.getElementById('modoJogador')
-  modoJogador.innerText = "Pegue um disco para muda-lo de lugar"
+  modoJogador.innerText = "Pegue um disco para mudá-lo de lugar"
 
   timer()
   let disable = document.getElementById("btStart");
@@ -96,7 +99,7 @@ function inicialize() {
 
   function moveDisc(arrAux, arr2, clickedTower) {
     if (arrAux.length === 0) {
-      modoJogador.innerText = "Agora, escolha uma torre para coloca-lo"
+      modoJogador.innerText = "Agora, escolha uma torre para colocá-lo"
       takeDisc(arr2);
     } else {
       putDisc(arr2, clickedTower);
@@ -138,20 +141,25 @@ function inicialize() {
     // condição de derrota
     if (width0 > width1) {
       modoJogador.innerText = ""
-      let result = document.getElementById('resultado')
-      result.innerText = "Game Over!"
-      result.style = "color: darkred"
-
+      // let result = document.getElementById('resultado')
+      // result.innerText = "Game Over!"
+      // result.style = "color: darkred"
+      let modalLoser = document.getElementById("modalLoser");
+      modalLoser.classList.remove("oculta2");
+      let conteinerDiv = document.getElementById("conteiner");
+      conteinerDiv.style = "cursor: none"  
     }
 
     // condição de vitória
     if (clickedTower === "torre3" && arr.length === 3) {
       modoJogador.innerText = ""
-
-      let result = document.getElementById('resultado')
-      result.innerText = "Parabéns!"
-      result.style = "color: darkgreen"
-
+      // let result = document.getElementById('resultado')
+      // result.innerText = "Parabéns!"
+      // result.style = "color: darkgreen";
+      let modalWinner = document.getElementById("modalWinner");
+      modalWinner.classList.remove("oculta");
+      let conteinerDiv = document.getElementById("conteiner");
+      conteinerDiv.style = "cursor: none"
     }
   }
 
@@ -179,14 +187,13 @@ function inicialize() {
 
   }
 
-
-
-  function restart() {
-    location.reload();
-  }
-
-  document.getElementById("btRestart").addEventListener("click", restart);
 }
+
+function restart() {
+  location.reload();
+}
+
+document.getElementById("btRestart").addEventListener("click", restart);
 
 
 
