@@ -31,7 +31,10 @@ h1 {
     height: 200px;
     margin-bottom: 20px; 
     cursor: pointer;
+    /* -webkit-tap-highlight-color: transparent */
+    
 }
+
 
 .torres{
     width: 100px;
@@ -41,6 +44,8 @@ h1 {
     align-items: center;
     border-bottom: 2px solid black;
 }
+
+
 
 .coluna{
     border-radius: 2px;
@@ -143,10 +148,10 @@ button {
     border-radius: 10px;
     position: absolute;
     width: 90%;
-    height: 50%;
+    height: 40%;
     left: 5%;
     bottom: 4%;
-    padding: 50px;
+    padding: 48px;
 }
 
 #modalOverlay {
@@ -187,10 +192,10 @@ button {
     border-radius: 10px;
     position: absolute;
     width: 90%;
-    height: 50%;
+    height: 40%;
     left: 5%;
     bottom: 4%;
-    padding: 50px;
+    padding: 48px;
 }
 
 #modalOverlay2 {
@@ -226,7 +231,7 @@ button {
 
 /*------------------- Responsivo ---------------------*/
 
-@media(min-width: 400px){
+@media(min-width: 450px){
     body{
         width: 100%;
         height: 100%;
@@ -260,6 +265,15 @@ button {
 }
 
 @media (min-width: 818px){
+
+    #modalLoser{
+        height: 75%;
+    }
+
+    #modalWinner{
+        height: 70%;
+    }
+
     #gifWinner {
         width: 300px;
         height: 300px;
